@@ -17,7 +17,7 @@ import { Label } from "~/components/ui/label";
 import { PROJECT_TITLE } from "~/lib/constants";
 
 export default function Frame(
-  { title }: { title?: string } = { title: PROJECT_TITLE }
+  { title }: { title?: string } = { title: "SnapVista - Your Pocket Polymath" }
 ) {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [context, setContext] = useState<Context.FrameContext>();
@@ -118,6 +118,17 @@ export default function Frame(
     >
       <div className="w-[300px] mx-auto py-2 px-2">
         <h1 className="text-2xl font-bold text-center mb-4">{title}</h1>
+        <p className="text-center text-neutral-600 mb-4">
+          SnapVista brings the world's knowledge to your fingertips
+        </p>
+        <div className="flex flex-col gap-2">
+          <PurpleButton onClick={() => sdk.actions.openUrl("https://snapvista.xyz")}>
+            Explore SnapVista
+          </PurpleButton>
+          <PurpleButton onClick={() => sdk.actions.openUrl("https://zd.xyz")}>
+            About zd Zach
+          </PurpleButton>
+        </div>
       </div>
     </div>
   );
